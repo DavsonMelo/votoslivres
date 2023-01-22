@@ -41,7 +41,7 @@ p {
 }
 
 header {
-    height: 10vh;
+    height: 5%;
     display: flex;
     justify-content: space-between;
     background-color: #eb4d4d;
@@ -52,7 +52,7 @@ header {
 ul {
     display: flex;
     text-align: right;
-    margin-right: 10px;
+    margin-right: 2%;
 }
 
 li {
