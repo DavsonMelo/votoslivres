@@ -7,7 +7,6 @@
 body {
     background-image: linear-gradient(to right, #F2CA52, #F28705);
 }
-
 main {
     background-color: white;
     border-top-right-radius: 15px;
@@ -16,6 +15,7 @@ main {
     width: 60%;
     padding: 12px;
     margin: auto;
+    margin-top: 15px;
 }
 
 h1 {
@@ -31,3 +31,39 @@ h2 {
 p {
     text-align: justify;
 }
+
+.Logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 100px;
+    background-color: white;
+    margin: 10px;
+}
+
+header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: #eb4d4d;
+    box-shadow: 0 0 1rem black;
+    border-radius: 5px;
+}
+
+ul {
+    display: flex;
+    margin: 23px;
+}
+
+li {
+    color: white;
+    list-style-type: none;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
+/* Color Theme Swatches in Hex */
+.OUTBACK-STEAK-HOUSE-1-hex { color: #F2CA52; }
+.OUTBACK-STEAK-HOUSE-2-hex { color: #F28705; }
+.OUTBACK-STEAK-HOUSE-3-hex { color: #F2D4C2; }
+.OUTBACK-STEAK-HOUSE-4-hex { color: #D91604; }
+.OUTBACK-STEAK-HOUSE-5-hex { color: #8C0303; }
