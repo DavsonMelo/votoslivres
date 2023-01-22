@@ -5,50 +5,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Votos Livres</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <div class="Logo"></div>
-        <ul>
-            <li>Home</li>
-            <li>Sobre nós</li>
-            <li>Objetivos</li>
-            <li>contato</li>
-        </ul>
-    </header>
-    <main>
-        <h1>Manifesto Votos Livres</h1>
+    <div class="header" id="header">
+        <button onclick="toggleSidebar()" class="btn_icon_header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+        </button>
+        <div class="logo_header">
+            <img src="img\hands.png" class="img_logo_header" alt="Logo Maos dadas">
+        </div>
+        <div class="navigation_header" id="navigation_header">
+            <button onclick="toggleSidebar()" class="btn_icon_header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+            <a href="index.html" class="active">Home</a>
+            <a href="sobre.html">Quem somos</a>
+            <a href="metas.html">Metas</a>
+            <a href="join.html">Junte-se a nós</a>
+            <a href="contact.html">Contato</a>
+        </div>
+    </div>
+    <div tabindex="0" onclick="closeSidebar()" class="content" id="content">
+        <main>
+            <h1>Manifesto Votos Livres</h1>
 
-        <h2>Das considerações</h2>
-        <p>Considerando a atual situação política e social da Nação Brasileira;</p>
-        <p>Considerando a desconfiança cada vez mais crescente do POVO em suas Instituições;</p>
-        <p>Considerando que o POVO é o real signatário e destinatário do poder estabelecido na Constituição Federativa
-            do Brasil;</p>
-        <p>Considerando a necessidade da busca do equilíbrio, harmonia entre as instituições e entre estas e o POVO;</p>
-        <p>Considerando que há, notadamente, uma vontade explícita dos poderes estabelecidos, em monopolizar o discurso
-            político e social em uma só vertente política, voltada a esquerda;</p>
+            <h2>Das considerações</h2>
+            <p>Considerando a atual situação política e social da Nação Brasileira;</p>
+            <p>Considerando a desconfiança cada vez mais crescente do POVO em suas Instituições;</p>
+            <p>Considerando que o POVO é o real signatário e destinatário do poder estabelecido na Constituição
+                Federativa
+                do Brasil;</p>
+            <p>Considerando a necessidade da busca do equilíbrio, harmonia entre as instituições e entre estas e o POVO;
+            </p>
+            <p>Considerando que há, notadamente, uma vontade explícita dos poderes estabelecidos, em monopolizar o
+                discurso
+                político e social em uma só vertente política, voltada a esquerda;</p>
 
-        <h2>Das resoluções</h2>
-        <p>O POVO do Brasil, reunidos entre seus eleitores participantes da vida política e social da Nação, resolve:
-        </p>
-        <p>A) - Este manifesto é o início de um debate que intenciona ser permanente na sociedade;</p>
-        <p>B) - Este manifesto reunirá cidadãos interessados em fazer do Brasil uma nação que exerça sua PLENA LIBERDADE
-            de pensamento, de opinião, de expressão, de vontade política e social;</p>
-        <P>C) - Entendemos que podemos debater e conquistar os objetivos propostos, por meio de debates PACÍFICOS,
-            Constitucionais e LIVRES;</P>
-        <p>E) - Entendemos que o ideal Conservador, aliado com o ideal Liberal é o melhor caminho para uma nação e um
-            mundo com prosperidade para todos, sem exceção;</p>
-        <p>Acreditamos na vida e na defesa da vida, desde sua concepção até sua morte natural; </p>
-        <P>Acreditamos na Meritocracia, onde aquele que trabalha, merece usufruir do capital conquistado por meio do
-            trabalho;</P>
-        <p>Acreditamos nas Leis do Brasil, e no que diz nossa Constituição Federal. Somos, essencialmente
-            constitucionalistas;</p>
-        <p>Acreditamos que o Brasil é uma nação que deve e pode acolher a todos, e todos que vierem, devem se submeter a
-            nossas culturas e costumes</p>
-    </main>
+            <h2>Das resoluções</h2>
+            <p>O POVO do Brasil, reunidos entre seus eleitores participantes da vida política e social da Nação,
+                resolve:
+            </p>
+            <p>A) - Este manifesto é o início de um debate que intenciona ser permanente na sociedade;</p>
+            <p>B) - Este manifesto reunirá cidadãos interessados em fazer do Brasil uma nação que exerça sua PLENA
+                LIBERDADE
+                de pensamento, de opinião, de expressão, de vontade política e social;</p>
+            <P>C) - Entendemos que podemos debater e conquistar os objetivos propostos, por meio de debates PACÍFICOS,
+                Constitucionais e LIVRES;</P>
+            <p>E) - Entendemos que o ideal Conservador, aliado com o ideal Liberal é o melhor caminho para uma nação e
+                um
+                mundo com prosperidade para todos, sem exceção;</p>
+            <p>Acreditamos na vida e na defesa da vida, desde sua concepção até sua morte natural; </p>
+            <P>Acreditamos na Meritocracia, onde aquele que trabalha, merece usufruir do capital conquistado por meio do
+                trabalho;</P>
+            <p>Acreditamos nas Leis do Brasil, e no que diz nossa Constituição Federal. Somos, essencialmente
+                constitucionalistas;</p>
+            <p>Acreditamos que o Brasil é uma nação que deve e pode acolher a todos, e todos que vierem, devem se
+                submeter a
+                nossas culturas e costumes</p>
+        </main>
+    </div>
 </body>
+<script>
+    var header = document.getElementById('header');
+    var navigationHeader = document.getElementById('navigation_header');
+    var content = document.getElementById('content');
+    var showSidebar = false;
 
+    function toggleSidebar()
+    {
+        showSidebar = !showSidebar;
+        if(showSidebar)
+        {
+            navigationHeader.style.marginLeft = '-10vw';
+            navigationHeader.style.animationName = 'showSidebar';
+            content.style.filter = 'blur(2px)';
+        }
+        else
+        {
+            navigationHeader.style.marginLeft = '-100vw';
+            navigationHeader.style.animationName = '';
+            content.style.filter = '';
+        }
+    }
+    function closeSidebar()
+    {
+        if(showSidebar)
+        {
+            toggleSidebar();
+        }
+    }
+    window.addEventListener('resize', function(event) {
+        if(window.innerWidth > 768 && showSidebar)
+        {
+            toggleSidebar;
+        }
+    });
+
+</script>
 </html>
