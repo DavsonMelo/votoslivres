@@ -8,7 +8,7 @@
     /*height: 100%;*/
 }
 body {
-    background-image: linear-gradient(to right,var(--Teals-3-hex), var(--Teals-4-hex));
+    background-image: linear-gradient(to right,var(--Dark-cyan2), var(--Very-dark-cyan));
 }
 
 .img_logo_header {
@@ -25,7 +25,7 @@ body {
 
 .header {
     position: fixed;
-    background-color: var(--Teals-5-hex);
+    background-color: var(--Very-dark-cyan2);
     box-shadow: 4px 4px 4px var(--color-black);
     height: 3.5em;
     width: 90%;
@@ -46,7 +46,7 @@ body {
 }
 
 .navigation_header a:hover{
-    color: var(--Teals-1-hex);
+    color: var(--Strong-cyan);
 }
 
 .active {
@@ -56,7 +56,7 @@ body {
     padding: 8px;
 }
 
-main {
+.box {
     background-image: linear-gradient(to right, rgba(255, 255, 0, 0.719), green);
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -85,35 +85,35 @@ main {
 
 .box h1{
     color: var(--color-white);
-    text-shadow: 0.1em 0.1em 0.05em var(--color-black);
+    text-shadow: 0.01em 0.1em 0.02em var(--color-black);
     text-align: center;
     padding-bottom: 30px;
 }
 
 .box h2 {
     color: var(--color-white);
-    text-shadow: 0.1em 0.1em 0.05em var(--color-black);
+    text-shadow: 0.1em 0.1em 0.02em var(--color-black);
     text-align: center;
     padding-bottom: 30px;
 }
 
 .box h3 {
     color: var(--color-white);
-    text-shadow: 0.1em 0.1em 0.05em var(--color-black);
+    text-shadow: 0.1em 0.1em 0.02em var(--color-black);
     text-align: center;
     padding-bottom: 30px;
 }
 
 .box h4 {
     color: var(--color-white);
-    text-shadow: 0.1em 0.1em 0.05em var(--color-black);
+    text-shadow: 0.1em 0.1em 0.02em var(--color-black);
     text-align: center;
     padding-bottom: 30px;
 }
 
 .box p {
     color: var(--color-white);
-    text-shadow: 0.1em 0.1em 0.05em var(--color-black);
+    text-shadow: 0.1em 0.1em 0.02em var(--color-black);
     font-size: 20px;
     text-align: left;
 }
@@ -135,7 +135,7 @@ p {
         position: fixed;
         flex-direction: column;
         top: 0;
-        background-image: linear-gradient(to right, var(--Teals-3-hex), var(--Teals-4-hex));
+        background-image: linear-gradient(to right, var(--Dark-cyan2), var(--Very-dark-cyan));
         border-radius: 10px;
         box-shadow: 10px 10px 10px black;
         height: 100%;
@@ -145,6 +145,18 @@ p {
         margin-left: -100vw;
         z-index: 3;
     }
+    .box {
+        background-image: linear-gradient(to right, rgba(255, 255, 0, 0.719), green);
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        box-shadow: 10px 10px 10px var(--color-black);
+        width: 90%;
+        padding: 12px;
+        margin: auto;
+        align-items: flex-start;
+        margin-top: 45px;
+        line-height: 30px;
+    }
 }
 
 @keyframes showSidebar {
@@ -153,12 +165,13 @@ p {
 }
 
 :root {
---Teals-1-hex: #0FC2C0; 
---Teals-2-hex: #0CABA8;
---Teals-3-hex: #008F8C;
---Teals-4-hex: #015958;
---Teals-5-hex: #023535;
+--Strong-cyan: #0fc2c0;
+--Dark-cyan: #0CABA8;
+--Dark-cyan2: #008F8C;
+--Very-dark-cyan: #015958;
+--Very-dark-cyan2: #023535;
 --color-black: #000000;
---color-white: #ffffff23;
+--Cinza: #ffffff23;
+--color-white: #ffffff;
 
 }
