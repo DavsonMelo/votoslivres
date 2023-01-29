@@ -1,0 +1,133 @@
+.body-videos {
+    height: 1200px;
+}
+.body-videos .titulo1 {
+    margin-top: 60px;
+    color: white;
+    text-align: center;
+}
+.body-videos .titulo2 {
+    margin-top: 480px;
+    color: white;
+    text-align: center;
+}
+.content1 {
+    height: 65%;
+    width: 53%;
+    border-radius: 23px;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 210px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.content1 .slide01 iframe {
+    height: 100%;
+    width: 100%;
+}
+.navigation1 {
+    margin-top: 400px;
+    position: absolute;
+    bottom: 50px;
+    left: 45%;
+    display: flex;
+}
+.bar1 {
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    margin: 6px;
+    border-radius: 15px;
+    cursor: pointer;
+    transform: .5s ease;
+}
+.bar1:hover {
+    background-color: white;
+}
+input {
+    display: none;
+}
+.slides1 {
+   display: flex; 
+   width: 500%;
+   height: 100%;
+}
+.slide01 {
+    width: 20%;
+    transition: .6s;
+}
+#slide1:checked ~.s1 {
+    margin-left: 0;
+}
+#slide2:checked ~.s1 {
+    margin-left: -20%;
+}
+#slide3:checked ~.s1 {
+    margin-left: -40%;
+}
+#slide4:checked ~.s1 {
+    margin-left: -60%;
+}
+#slide5:checked ~.s1 {
+    margin-left: -80%;
+}
+
+/* bloco de videos 2 */
+.content2 {
+    height: 65%;
+    width: 53%;
+    border-radius: 23px;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 210px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.content2 .slide02 iframe {
+    height: 100%;
+    width: 100%;
+}
+.navigation2 {
+    margin-top: 425px;
+    position: absolute;
+    left: 45%;
+    display: flex;
+}
+.bar2 {
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    margin: 6px;
+    border-radius: 15px;
+    cursor: pointer;
+    transform: .5s ease;
+}
+.bar2:hover {
+    background-color: white;
+}
+.slides2 {
+    display: flex; 
+    width: 500%;
+    height: 100%;
+ }
+ .slide02 {
+    width: 20%;
+    transition: .6s;
+}
+#slide6:checked ~.s2 {
+    margin-left: 0;
+}
+#slide7:checked ~.s2 {
+    margin-left: -20%;
+}
+#slide8:checked ~.s2 {
+    margin-left: -40%;
+}
+#slide9:checked ~.s2 {
+    margin-left: -60%;
+}
+#slide10:checked ~.s2 {
+    margin-left: -80%;
+}
