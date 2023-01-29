@@ -1,36 +1,35 @@
-.body-videos {
-    height: 1200px;
-}
 .body-videos .titulo1 {
-    margin-top: 60px;
+    position: static;
+    margin-top: 10vh;
     color: white;
+    padding: 10px;
     text-align: center;
 }
 .body-videos .titulo2 {
-    margin-top: 480px;
+    position: static;
+    margin-top: 10vh;
     color: white;
+    padding: 10px;
     text-align: center;
 }
 .content1 {
-    height: 65%;
-    width: 53%;
+    width: 727px;
+    height: 409px;
     border-radius: 23px;
     overflow: hidden;
-    position: absolute;
-    margin-top: 210px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    position: static;
+    margin: auto;
 }
 .content1 .slide01 iframe {
     height: 100%;
     width: 100%;
 }
 .navigation1 {
-    margin-top: 400px;
-    position: absolute;
-    bottom: 50px;
-    left: 45%;
+    margin-top: 1px;
+    position: static;
+    margin: auto;
+    width: 15%;
+    padding: 10px;
     display: flex;
 }
 .bar1 {
@@ -75,24 +74,23 @@ input {
 
 /* bloco de videos 2 */
 .content2 {
-    height: 65%;
-    width: 53%;
+    width: 727px;
+    height: 409px;
     border-radius: 23px;
     overflow: hidden;
-    position: absolute;
-    margin-top: 210px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    position: static;
+    margin: auto;
 }
 .content2 .slide02 iframe {
     height: 100%;
     width: 100%;
 }
 .navigation2 {
-    margin-top: 425px;
-    position: absolute;
-    left: 45%;
+    margin-top: 1px;
+    position: static;
+    margin: auto;
+    width: 15%;
+    padding: 10px;
     display: flex;
 }
 .bar2 {
@@ -130,4 +128,49 @@ input {
 }
 #slide10:checked ~.s2 {
     margin-left: -80%;
+}
+@media screen and (max-width: 768px) {
+    .body-videos .titulo1 {
+        position: static;
+        margin-top: 10vh;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size:x-large;
+    }
+    .content1 {
+        width: 90%;
+        border-radius: 23px;
+        overflow: hidden;
+        position: static;
+        margin: auto;
+    }
+    .navigation1 {
+        top:auto ;
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+    }
+    .body-videos .titulo2 {
+        top: auto;
+        position: static;
+        color: white;
+        text-align: center;
+        font-size:x-large;
+    }
+    .content2 {
+        width: 90%;
+        border-radius: 23px;
+        overflow: hidden;
+        position: static;
+        margin: auto;
+    }
+    .navigation2 {
+        top: auto;
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+    }
 }
