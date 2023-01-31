@@ -18,6 +18,7 @@ function toggleSidebar()
         navigationHeader.style.marginLeft = '-100vw';
         navigationHeader.style.animationName = '';
         content.style.filter = '';
+        
     }
 }
 function closeSidebar()

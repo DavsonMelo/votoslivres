@@ -1,3 +1,4 @@
+@charset "utf-8";
 .body-videos .titulo1 {
     position: static;
     margin-top: 10vh;
@@ -12,13 +13,20 @@
     padding: 10px;
     text-align: center;
 }
+.content {
+    text-align: center;
+    padding-top: 20px;
+    transition: 1s;
+}
 .content1 {
     width: 727px;
     height: 409px;
     border-radius: 23px;
+    box-shadow: 10px 10px 10px var(--color-black);
     overflow: hidden;
     position: static;
     margin: auto;
+
 }
 .content1 .slide01 iframe {
     height: 100%;
@@ -77,6 +85,7 @@ input {
     width: 727px;
     height: 409px;
     border-radius: 23px;
+    box-shadow: 10px 10px 10px var(--color-black);
     overflow: hidden;
     position: static;
     margin: auto;
