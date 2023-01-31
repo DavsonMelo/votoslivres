@@ -40,3 +40,13 @@
     color: white;
     font-size: x-large;
 }
+@media screen and (max-width: 768px) {
+    .flex img {
+    width: 330px;
+    height: 410px;
+    box-shadow: 10px 10px 10px var(--color-black);
+    border-bottom-right-radius: 18px;
+    margin: auto;
+    display: block;
+    }
+}
