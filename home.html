@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radio Livres</title>
-</head>
-<body>
-    <h1>teste de renderização</h1>
-</body>
-</html>
+from fasthtml.common import FastHTML, serve
+
+app = FastHTML()
+
+@app.get("/")
+def homepage():
+    return "<h1>Bem vindo aom meu site com FastHTML</h1>"
+
+serve()
