@@ -1,120 +1,12 @@
-body {
+* {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    transition: bottom 0.1s;
     box-sizing: border-box;
 }
 .game-board {
     width: 100%;
-    height: 500px;
-    border-bottom: 15px solid rgb(35, 160, 35);
+    height: 70%;
     margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
-    transition: height 0.3s ease-in-out; /* Transição suave ao alterar a altura */
-}
-.pipe {
     position: absolute;
-    bottom: 0;
-    width: 60px;
-   animation: pipe-animation 2s infinite linear;
- }
- .mario {
-    width: 150px;
-    position: absolute;
-    bottom: -15px;
- }
- .jump {
-    animation: jump 500ms ease-in-out;
- }
- .nuvem-pequena {
-    width: 300px;
-    position: absolute;
-    top: -50px;
-    right: 0;
-    animation: nuvem-pequena-animation 20s infinite linear;
- }
- .nuvem-media {
-    width: 500px;
-    position: absolute;
-    top: -50px;
-    right: 0;
-    animation: nuvem-media-animation 10s infinite linear;
- }
-@keyframes pipe-animation {
-    from {
-        right: -80px;
-    }
-    to {
-        right: 100%;
-    }
-}
-@keyframes jump {
-    0% {
-        bottom: 0;
-    }
-    40% {
-        bottom: 180px;
-    }
-    50% {
-        bottom: 180px;
-    }
-    60% {
-        bottom: 180px;
-    }
-    100% {
-        bottom: 0;
-    }
-}
-@keyframes nuvem-pequena-animation {
-    from {
-        right: -200px;
-    }
-    to {
-        right: 100%;
-    }
-}
-@keyframes nuvem-media-animation {
-    from {
-        right: -400px;
-    }
-    to {
-        right: 100%;
-    }
-}
-@media (max-width: 600px) and (orientation: landscape) {
-    .game-board {
-        height: 300px; /* Reduz a altura para paisagem */
-    }
-
-    .mario {
-        width: 80px; /* Ajuste no tamanho */
-    }
-
-    .pipe {
-        width: 20px; /* Redução para telas menores */
-    }
-
-    .nuvem-pequena {
-        width: 200px;
-    }
-
-    .nuvem-media {
-        width: 300px;
-    }
-}
-@media (min-width: 601px) and (max-width: 1024px) {
-    .game-board {
-        height: 400px;
-    }
-
-    .mario {
-        width: 120px;
-    }
-
-    .pipe {
-        width: 40px;
-    }
+    border: 3px solid black;
 }
