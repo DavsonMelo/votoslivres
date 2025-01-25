@@ -84,7 +84,7 @@ body {
 }
 @media (max-width: 600px) {
     .mario {
-        width: 30px;
+        width: 100px;
         left: 20px;
     }
 
