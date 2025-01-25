@@ -13,6 +13,7 @@ body {
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
+    transition: height 0.3s ease-in-out; /* Transição suave ao alterar a altura */
 }
 .pipe {
     position: absolute;
