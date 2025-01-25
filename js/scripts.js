@@ -15,8 +15,8 @@ const loop = setInterval(() => {
     const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
 
     const screenWidth = window.innerWidth;
-    const pipeThreshold = screenWidth <= 600 ? 60 : 120;
-    const marioJumpHeight = screenWidth <= 600 ? 40 : 80;
+    const pipeThreshold = screenWidth <= 600 ? 90 : 120;
+    const marioJumpHeight = screenWidth <= 600 ? 30 : 80;
 
     if (pipePosition <= pipeThreshold && pipePosition > 0 && marioPosition < marioJumpHeight) {
 
