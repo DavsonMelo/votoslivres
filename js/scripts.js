@@ -27,7 +27,7 @@ const updateCollisionValues = () => {
     
         // Ajusta a duração da animação baseado no tamanho da tela
         if (screenWidth <= 600) {
-            pipe.style.animationDuration = "1s"; // Mais lento em telas menores
+            pipe.style.animationDuration = "1.5s"; // Mais lento em telas menores
         } else {
             pipe.style.animationDuration = "2s"; // Padrão para telas maiores
         }
@@ -41,7 +41,7 @@ const updateCollisionValues = () => {
 
     // Ajusta a altura do pulo dependendo da largura da tela
     if (screenWidth <= 600) {
-        mario.style.setProperty("--jump-height", "200px"); // Maior para telas menores
+        mario.style.setProperty("--jump-height", "250px"); // Maior para telas menores
     } else {
         mario.style.setProperty("--jump-height", "180px"); // Padrão
     }
