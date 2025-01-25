@@ -8,6 +8,8 @@ const jump = () => {
         mario.classList.remove("jump");
     }, 500)
 }
+document.addEventListener("touchstart", jump)
+
 const loop = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
