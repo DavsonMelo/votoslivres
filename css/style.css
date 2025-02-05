@@ -4,9 +4,167 @@
     box-sizing: border-box;
 }
 .game-board {
-    width: 100%;
-    height: 70%;
-    margin: 0 auto;
+    overflow: hidden;
+    width: 90%;
+    height: 60%;
+    top: 50px; /* Define o espaçamento superior */
+    left: 50%; /* Posiciona horizontalmente no meio */
+    transform: translateX(-50%); /* Ajusta a posição horizontal para centralizar */
+    position: absolute; /* Mantém como absolute */
+    border-bottom: 17px solid rgb(35, 160, 35);
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+.nuvem-1 {
     position: absolute;
-    border: 3px solid black;
+    top: 50px;
+    left: 50px;
+    width: 150px;
+    height: 150px;
+    animation: nuvem1-animation 20s linear infinite;
+}
+.nuvem-2 {
+    position: absolute;
+    top: 10px;
+    left: 200px;
+    width: 250px;
+    height: 250px;
+    animation: nuvem2-animation 15s linear infinite;
+}
+.picanha {
+    position: absolute;
+    bottom: -25px;
+    width: 100px;
+    height: 100px;
+    right: -100px;
+    /*left: 335px;  posição do pipe para o jump na tela do PC */
+}
+.cadeia {
+    position: absolute;
+    bottom: 0px;
+    width: 60px;
+    height: 60px;
+    right: -100px;
+}
+.dolares {
+    position: absolute;
+    bottom: -30px;
+    width: 130px;
+    height: 130px;
+    right: -125px;
+}
+.mario {
+    position: absolute;
+    bottom: -13px;
+    width: 110px;
+    right: 840px; /* posição do lula antes do jump */
+    /* visibility: hidden; */
+}
+.policia {
+    position: absolute;
+    bottom: -45px;
+    width: 200px;
+    left: -70px; /* posição do policial antes do jump */
+    /* visibility: hidden; */
+}
+@keyframes picanha-animation {
+    from {
+        right: -50px;
+    }
+    to {
+        right: 100%;
+    }
+}
+@keyframes cadeia-animation {
+    from {
+        right: -50px;
+    }
+    to {
+        right: 100%;
+    }
+}
+@keyframes dolares-animation {
+    from {
+        right: -50px;
+    }
+    to {
+        right: 100%;
+    }
+}
+@keyframes jump {
+    0% {
+        bottom: -13px;
+    }
+    40% {
+        bottom: 140px;
+    }   
+    50% {
+        bottom: 140px;
+    }
+    60% {
+        bottom: 140px;
+    }
+    70% {
+        bottom: 70px;
+    }   
+    100% {
+        bottom: -13px;
+    }
+}
+.jump {
+    animation: jump 1200ms ease-out;
+}  
+@keyframes nuvem1-animation {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -150px;
+    }
+} 
+@keyframes nuvem2-animation {
+    0% {
+        left: 130%;
+    }
+    100% {
+        left: -150px;
+    }
+} 
+@keyframes jumpMobile {
+    0% {
+        bottom: -15px;
+    }
+    40% {
+        bottom: 60px;
+    }   
+    50% {
+        bottom: 60px;
+    }
+    60% {
+        bottom: 60px;
+    }   
+    100% {
+        bottom: -15px;
+    }
+}
+/* Media queries para telas menores */
+@media (max-width: 600px) {
+    .game-board {
+        margin-top: 50px;
+        height: 30%;
+    }
+    .pipe {
+        position: absolute;
+        bottom: 0;
+        width: 35px;
+        height: 35px;
+        right: 190px; /*  posição do pipe para o jump na tela do mobile */
+        animation: pipe-animation 2s linear infinite;
+    }
+    .mario {
+        width: 100px;
+        /* right: 220px; posição do lula antes do jump */
+        right: 155px; /* posição do lula no alto do jump */
+        bottom: -10px;
+        animation: jumpMobile 900ms ease-out;
+    }
 }
