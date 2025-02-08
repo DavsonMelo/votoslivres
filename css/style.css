@@ -3,11 +3,30 @@
     padding: 0;
     box-sizing: border-box;
 }
+header {
+    background-color: #007BFF; /* Cor de fundo azul */
+    padding: 10px; /* Espaçamento interno */
+    display: flex; /* Usa flexbox para ajustar os elementos horizontalmente */
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    align-items: center; /* Centraliza os elementos verticalmente */
+}
+.neon-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #87ceeb;
+    color: rgb(35, 160, 35);
+    }
+.neon-btn:hover {
+    background-color: #e0f6ff;
+    box-shadow: 0 0 20px #e0f6ff;
+}
 .game-board {
     overflow: hidden;
-    width: 90%;
+    width: 100%;
     height: 60%;
-    top: 50px; /* Define o espaçamento superior */
     left: 50%; /* Posiciona horizontalmente no meio */
     transform: translateX(-50%); /* Ajusta a posição horizontal para centralizar */
     position: absolute; /* Mantém como absolute */
@@ -43,14 +62,14 @@
     bottom: 0px;
     width: 60px;
     height: 60px;
-    right: -100px;
+    right: -300px;
 }
 .dolares {
     position: absolute;
     bottom: -30px;
     width: 130px;
     height: 130px;
-    right: -125px;
+    right: -500px;
 }
 .mario {
     position: absolute;
@@ -67,26 +86,26 @@
     /* visibility: hidden; */
 }
 @keyframes picanha-animation {
-    from {
-        right: -50px;
+    0% {
+        right: -100px;
     }
-    to {
+    100% {
         right: 100%;
     }
 }
 @keyframes cadeia-animation {
-    from {
-        right: -50px;
+    0% {
+        right: -300px;
     }
-    to {
+    100% {
         right: 100%;
     }
 }
 @keyframes dolares-animation {
-    from {
-        right: -50px;
+    0% {
+        right: -500px;
     }
-    to {
+    100% {
         right: 100%;
     }
 }
