@@ -7,7 +7,7 @@ header {
     background-color: #007BFF; /* Cor de fundo azul */
     padding: 10px; /* Espaçamento interno */
     display: flex; /* Usa flexbox para ajustar os elementos horizontalmente */
-    justify-content: center; /* Centraliza os elementos horizontalmente */
+    justify-content: space-around; /* Centraliza os elementos horizontalmente */
     align-items: center; /* Centraliza os elementos verticalmente */
 }
 .neon-btn {
@@ -82,8 +82,16 @@ header {
     position: absolute;
     bottom: -45px;
     width: 200px;
-    left: -70px; /* posição do policial antes do jump */
+    left: -200px; /* posição do policial antes do jump */
     /* visibility: hidden; */
+}
+@keyframes policia-animation {
+    0% {
+        left: -200px;
+    }
+    100% {
+        left: 100%;
+    }
 }
 @keyframes picanha-animation {
     0% {
