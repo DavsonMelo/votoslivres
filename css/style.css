@@ -52,16 +52,16 @@ header {
 .picanha {
     position: absolute;
     bottom: -25px;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     right: -100px;
     /*left: 335px;  posição do pipe para o jump na tela do PC */
 }
 .cadeia {
     position: absolute;
-    bottom: 0px;
-    width: 60px;
-    height: 60px;
+    bottom: -25px;
+    width: 100px;
+    height: 100px;
     right: -300px;
 }
 .dolares {
