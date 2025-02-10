@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
         const cadeia = document.querySelector('.cadeia');
         const dolares = document.querySelector('.dolares');
         const mario = document.querySelector('.mario');
+        const cidade = document.querySelector('.cidade')
+        const cidade2 = document.querySelector('.cidade2')
 
         const restartButton = document.querySelector('.neon-btn'); // Seleciona o botão Restart
         
@@ -64,6 +66,30 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
                 setTimeout(animatePolicia, 10000); // Espaçamento de 5 segundos (5000ms)
             }, { once: true });
           }
+
+          let animacaoAtual = 1;
+          
+          function animateCidade() {
+            cidade.style.animation = 'none';
+            void cidade.offsetWidth;
+            cidade.style.animation = 'cidade-animation 25s linear 1';
+
+            cidade.addEventListener('animationend', () => {
+                animacaoAtual = 2; // Próxima animação é a cidade2
+                animateCidade2();
+            }, { once: true });
+          }
+          function animateCidade2() {
+            cidade2.style.animation = 'none';
+            void cidade2.offsetWidth;
+            cidade2.style.animation = 'cidade2-animation 25s linear 1';
+
+            cidade2.addEventListener('animationend', () => {
+                animacaoAtual = 1; // Próxima animação é a cidade
+                animateCidade();
+            }, { once: true });
+          }
+          animateCidade();
 
         runAnimations(); // Inicia as animações
     }

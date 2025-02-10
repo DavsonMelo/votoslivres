@@ -85,6 +85,38 @@ header {
     left: -200px; /* posição do policial antes do jump */
     /* visibility: hidden; */
 }
+.cidade {
+    position: absolute;
+    z-index: -1;
+    bottom: -20px;
+    width: 1400px;
+    height: 400px;
+    right: -1400px;
+}
+.cidade2 {
+    position: absolute;
+    z-index: -1;
+    bottom: -60px;
+    width: 1500px;
+    height: 500px;
+    right: -1500px;
+}
+@keyframes cidade-animation{
+    0% {
+        right: -1400px;
+    }
+    100% {
+        right: 100%;
+    }
+}
+@keyframes cidade2-animation{
+    0% {
+        right: -1500px;
+    }
+    100% {
+        right: 100%;
+    }
+}
 @keyframes policia-animation {
     0% {
         left: -200px;
