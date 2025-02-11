@@ -28,8 +28,11 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
             cidade2: document.querySelector('.cidade2'), // Seleciona o elemento cidade2
             restartButton: document.querySelector('.neon-btn'), // Seleciona o botão Restart
             scoreElement: document.getElementById('score'), // Seleciona o elemento de pontuação
-            trilhasonora: document.getElementById('supermario'), // Seleciona o elemento de áudio da trilha sonora
-            sirene: document.getElementById('sirene') // Seleciona o elemento de áudio da sirene
+            // AUDIOS
+            trilhasonora: document.getElementById('supermario'), // Seleciona o elemento de áudio
+            sirene: document.getElementById('sirene'), // Seleciona o elemento de áudio da sirene
+            porfavor: document.getElementById('porfavor'),
+            comerpicanha: document.getElementById('comerpicanha'),
         };
 
         const animations = [
@@ -41,13 +44,19 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
         let animationSpeed = 3.2; // Define a velocidade padrão das animações
         let score = 0; // Inicializa a pontuação
         let dollarCount = 0; // Inicializa a contagem de dólares
+        let dollarPassed = false;
         let endGame = false; // Inicializa o estado do jogo como não terminado
         let isJumping = false; // Inicializa o estado de pulo como falso
-        elements.trilhasonora.volume = 0.5; // Define o volume da trilha sonora
-        elements.sirene.volume = 0.06; // Define o volume da sirene
+        elements.trilhasonora.volume = 0.3; // Define o volume da trilha sonora
+        elements.sirene.volume = 0.04; // Define o volume da sirene
+        elements.porfavor.volume = 0.8;
+        elements.comerpicanha.volume = 1;
 
         animatePolicia(); // Inicia a animação da polícia
+        elements.trilhasonora.pause();   // Pausa qualquer áudio que esteja tocando
+        elements.trilhasonora.currentTime = 0;
         elements.trilhasonora.play(); // Reproduz a trilha sonora
+
 
         function startAnimation(element, animationName) {
             element.style.animation = 'none'; // Remove qualquer animação existente
@@ -117,15 +126,31 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
                     if (jumpedOverPicanha || jumpedOverCadeia) {
                         score++; // Incrementa a pontuação
                         updateScore();
+                        if(jumpedOverPicanha) {
+                            comerpicanha.play();
+                        }
                     }
                 }, 350); // Verifica no meio do pulo
 
                 setTimeout(() => {
                     elements.mario.classList.remove('jump');
                     isJumping = false;
+                    dollarPassed = false;
                 }, 700); // Duração da animação de pulo
             }
         }
+
+        function checkJumpOver(element) {
+            const marioRect = elements.mario.getBoundingClientRect();
+            const elementRect = element.getBoundingClientRect();
+        
+            return (
+                marioRect.bottom < elementRect.top &&  // Mario passou acima do elemento
+                elementRect.left < marioRect.right &&  // O elemento está à esquerda de Mario
+                elementRect.right > marioRect.left     // O elemento está à direita de Mario
+            );
+        }
+
         document.addEventListener('keydown', (event) => {
             if (event.code === 'Space') {
                 jump();
@@ -149,7 +174,15 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
                     endGame = true;
                     stopGame();
                 }
+            }else if(element === elements.dolares && elementRect.right < marioRect.left && !isJumping && !dollarPassed) {
+                dollarCount += 100;
+                dollarPassed = true;
+                updateScore();
             }
+        }
+
+        function updateScore() {
+            elements.scoreElement.textContent = `Pontuação: ${score} | 💵 Dólares: ${dollarCount}`;
         }
 
         function stopGame() {
@@ -159,6 +192,7 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
             elements.mario.style.animation = 'none';
             elements.mario.src = 'images/choro.png';
             elements.trilhasonora.pause(); // Pausa a trilha sonora
+            elements.porfavor.play();
             elements.trilhasonora.currentTime = 0; // Reinicia a trilha sonora
 
             document.getElementById('gameOverModal').style.display = 'block';
