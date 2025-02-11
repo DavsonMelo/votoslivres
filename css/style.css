@@ -43,6 +43,17 @@ header {
     border-bottom: 17px solid rgb(35, 160, 35);
     background: linear-gradient(#87ceeb, #e0f6ff);
 }
+.modal {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
+}
 .nuvem-1 {
     position: absolute;
     top: 50px;
@@ -98,7 +109,7 @@ header {
 .cidade {
     position: absolute;
     z-index: -1;
-    bottom: -20--*-+px;
+    bottom: -20px;
     width: 1400px;
     height: 400px;
     right: -1400px;
