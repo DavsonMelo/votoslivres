@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-database-compat.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
@@ -12,8 +14,12 @@
     <header>
         <div>
             <button id="start-button" class="neon-btn">Iniciar Jogo</button>
+        </div>
+        <div>
             <span id="score">Pontos: 0</span>
-        </div> 
+        </div>
+        <div align=center><a href='https://contador.s12.com.br'><img src='https://contador.s12.com.br/img-42dByYyb4a7YAZ9Y-56.gif' border='0' alt='contador de visitantes'></a><script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=42dByYyb4a7YAZ9Y'></script>
+        </div>
     </header>
     <div class="game-board"> 
         <img src="./images/nuvem-pequena.png" alt="nuvem-2" class="nuvem-2">
@@ -45,8 +51,6 @@
         </div>
     </div>
     <div class="aviso-construcao">JOGO EM CONSTRUÇÃO</div>
-    <div><p id="contador">Acessos: 0</p>
-    </div>
-        
+           
 </body>
 </html>

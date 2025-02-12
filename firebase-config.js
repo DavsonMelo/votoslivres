@@ -1,13 +1,11 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCLOK_x4BRxCb1csqdmy64wMuw923z41zg",
-    authDomain: "gamelula-89719.firebaseapp.com",
-    databaseURL: "https://gamelula-89719-default-rtdb.firebaseio.com",
-    projectId: "gamelula-89719",
-    storageBucket: "gamelula-89719.firebasestorage.app",
-    messagingSenderId: "994035484411",
-    appId: "1:994035484411:web:eb86b33c84d8644735125e",
-    measurementId: "G-YP0YTWMVMV"
-};
-
-// Exportar para ser usado em outros arquivos
-export default firebaseConfig;
+    apiKey: "AIzaSyDA0W6y3EyJdwZLZ_ozUH-0mf-P4DvF3uM",
+    authDomain: "superinaciobro.firebaseapp.com",
+    databaseURL: "https://superinaciobro-default-rtdb.firebaseio.com",
+    projectId: "superinaciobro",
+    storageBucket: "superinaciobro.firebasestorage.app",
+    messagingSenderId: "1034535548084",
+    appId: "1:1034535548084:web:d2bacd4295e969308cd3e1"
+  };
+  
+  export default firebaseConfig;

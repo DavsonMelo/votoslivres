@@ -1,23 +1,8 @@
-import firebaseConfig from "./firebase-config.js"; 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-import { getDatabase, ref, increment, runTransaction } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+// import firebaseConfig from './firebase-config.js';
 
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+    // firebase.initializeApp(firebaseConfig);
+    // const db = firebase.database();
 
-function incrementarContador() {
-    const contadorRef = ref(database, "contador");
-
-    runTransaction(contadorRef, (contador) => {
-        return (contador || 0) + 1;
-    }).then((resultado) => {
-        console.log("Acessos:", resultado.snapshot.val());
-        document.getElementById("contador").innerText = `Acessos: ${resultado.snapshot.val()}`;
-    });
-}
-
-// Chamar a função ao carregar a página
-document.addEventListener("DOMContentLoaded", incrementarContador);
 
 document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está carregado
     const startButton = document.querySelector('.neon-btn'); // Seleciona o botão Start
@@ -269,7 +254,5 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
         window.location.href = window.location.pathname + "?restart=true"; // Recarrega a página com o parâmetro
 
     });
-
-    // Remova o ouvinte de eventos de resetGame
-    // startButton.addEventListener('click', resetGame); 
+ 
 });
