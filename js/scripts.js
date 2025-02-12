@@ -19,38 +19,48 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
     function startGame() {
         // Agrupa as seleções de elementos em um único objeto
         const elements = {
-            policia: document.querySelector('.policia'), // Seleciona o elemento policia
+            // IMAGENS
             picanha: document.querySelector('.picanha'), // Seleciona o elemento picanha
             cadeia: document.querySelector('.cadeia'), // Seleciona o elemento cadeia
             dolares: document.querySelector('.dolares'), // Seleciona o elemento dolares
-            mario: document.querySelector('.mario'), // Seleciona o elemento mario
+            cervejinha: document.querySelector('.cervejinha'),
             cidade: document.querySelector('.cidade'), // Seleciona o elemento cidade
             cidade2: document.querySelector('.cidade2'), // Seleciona o elemento cidade2
             restartButton: document.querySelector('.neon-btn'), // Seleciona o botão Restart
             scoreElement: document.getElementById('score'), // Seleciona o elemento de pontuação
+            inflacao: document.querySelector('.inflacao'), // Seleciona o elemento inflacao
+            // GIFS
+            policia: document.querySelector('.policia'), // Seleciona o elemento policia
+            mario: document.querySelector('.mario'), // Seleciona o elemento mario
             // AUDIOS
             trilhasonora: document.getElementById('supermario'), // Seleciona o elemento de áudio
             sirene: document.getElementById('sirene'), // Seleciona o elemento de áudio da sirene
             porfavor: document.getElementById('porfavor'),
-            comerpicanha: document.getElementById('comerpicanha'),
+            umchurrasquinho: document.getElementById('um-churrasquinho'),
+            cervejagelada: document.getElementById('cervejagelada'),
+            audiocadeia: document.getElementById('audiocadeia'),
+            granaprobolso: document.getElementById('granaprobolso'),
         };
 
         const animations = [
-            { element: elements.picanha, animationName: 'picanha-animation' }, // Define a animação para picanha
-            { element: elements.cadeia, animationName: 'cadeia-animation' }, // Define a animação para cadeia
-            { element: elements.dolares, animationName: 'dolares-animation' }, // Define a animação para dolares
+            { element: elements.picanha, animationName: 'picanha-animation' },
+            { element: elements.cadeia, animationName: 'cadeia-animation' },
+            { element: elements.dolares, animationName: 'dolares-animation' },
+            { element: elements.cervejinha, animationName: 'cervejinha-animation' },
+            { element: elements.inflacao, animationName: 'inflacao-animation' },
         ];
 
-        let animationSpeed = 3.2; // Define a velocidade padrão das animações
+        let animationSpeed = 3; // Define a velocidade padrão das animações
         let score = 0; // Inicializa a pontuação
-        let dollarCount = 0; // Inicializa a contagem de dólares
-        let dollarPassed = false;
         let endGame = false; // Inicializa o estado do jogo como não terminado
         let isJumping = false; // Inicializa o estado de pulo como falso
-        elements.trilhasonora.volume = 0.3; // Define o volume da trilha sonora
+        elements.trilhasonora.volume = 0.5; // Define o volume da trilha sonora
         elements.sirene.volume = 0.04; // Define o volume da sirene
         elements.porfavor.volume = 0.8;
-        elements.comerpicanha.volume = 1;
+        elements.umchurrasquinho.volume = 1;
+        elements.cervejagelada.volume = 1;
+        elements.audiocadeia.volume = 1;
+        elements.granaprobolso.volume = 1;
 
         animatePolicia(); // Inicia a animação da polícia
         elements.trilhasonora.pause();   // Pausa qualquer áudio que esteja tocando
@@ -111,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
         }
 
         animateCidade(); // Inicia a animação da cidade
-
         runAnimations(); // Inicia as animações dos elementos
 
         function jump() {
@@ -120,22 +129,48 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
                 isJumping = true;
 
                 setTimeout(() => {
-                    const jumpedOverPicanha = checkJumpOver(elements.picanha);
-                    const jumpedOverCadeia = checkJumpOver(elements.cadeia);
-        
-                    if (jumpedOverPicanha || jumpedOverCadeia) {
-                        score++; // Incrementa a pontuação
+                    let jumpedElement = null;
+                    
+                    if(checkJumpOver(elements.picanha)) {
+                        jumpedElement = "picanha";
+                    }else if(checkJumpOver(elements.cadeia)) {
+                        jumpedElement = "cadeia";
+                    }else if(checkJumpOver(elements.dolares)) {
+                        jumpedElement = "dolares";
+                    }else if(checkJumpOver(elements.cervejinha)) {
+                        jumpedElement = "cervejinha";
+                    }else if(checkJumpOver(elements.inflacao)) {
+                        jumpedElement = "inflacao";
+                    }
+                    if(jumpedElement) {
+                        score++;
                         updateScore();
-                        if(jumpedOverPicanha) {
-                            comerpicanha.play();
+
+                        switch(jumpedElement) {
+                            case "picanha":
+                                elements.umchurrasquinho.play();
+                                break;
+                            case "cadeia":
+                                elements.audiocadeia.play();
+                                break;
+                            case "dolares":
+                                elements.granaprobolso.play();
+                                break;
+                            case "cervejinha":
+                                elements.cervejagelada.play();
+                                break;
+                                case "inflacao":
+                                    console.log("Inflação");
+                                    break;
+                                    
                         }
                     }
+
                 }, 350); // Verifica no meio do pulo
 
                 setTimeout(() => {
                     elements.mario.classList.remove('jump');
                     isJumping = false;
-                    dollarPassed = false;
                 }, 700); // Duração da animação de pulo
             }
         }
@@ -167,22 +202,21 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
                 elementRect.top < marioRect.bottom &&
                 elementRect.bottom > marioRect.top
             ) {
-                if (element === elements.picanha || element === elements.cadeia) {
+                if (
+                    element === elements.picanha || 
+                    element === elements.cadeia || 
+                    element === elements.dolares || 
+                    element === elements.cervejinha ||
+                    element === elements.inflacao
+                ) {
                     endGame = true;
                     stopGame(); 
-                }else if (element === elements.dolares && isJumping) {
-                    endGame = true;
-                    stopGame();
                 }
-            }else if(element === elements.dolares && elementRect.right < marioRect.left && !isJumping && !dollarPassed) {
-                dollarCount += 100;
-                dollarPassed = true;
-                updateScore();
             }
         }
 
         function updateScore() {
-            elements.scoreElement.textContent = `Pontuação: ${score} | 💵 Dólares: ${dollarCount}`;
+            elements.scoreElement.textContent = `Pontuação: ${score}`;
         }
 
         function stopGame() {
