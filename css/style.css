@@ -101,10 +101,12 @@ header {
 }
 .inflacao {
     position: absolute;
+    background-color: aliceblue;
+    border-radius: 15px;
     bottom: -25px;
-    width: 90px;
-    height: 90px;
-    right: -100px;
+    width: 110px;
+    height: 100px;
+    right: -110px;
 }
 .mario {
     position: absolute;

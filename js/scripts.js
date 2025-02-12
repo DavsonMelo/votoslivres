@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
             cervejagelada: document.getElementById('cervejagelada'),
             audiocadeia: document.getElementById('audiocadeia'),
             granaprobolso: document.getElementById('granaprobolso'),
+            tacaro: document.getElementById('tacaro'),
         };
 
         const animations = [
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
         elements.cervejagelada.volume = 1;
         elements.audiocadeia.volume = 1;
         elements.granaprobolso.volume = 1;
+        elements.tacaro.volume = 1;
 
         animatePolicia(); // Inicia a animação da polícia
         elements.trilhasonora.pause();   // Pausa qualquer áudio que esteja tocando
@@ -160,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está
                                 elements.cervejagelada.play();
                                 break;
                                 case "inflacao":
-                                    console.log("Inflação");
+                                    elements.tacaro.play();
                                     break;
                                     
                         }
