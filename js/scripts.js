@@ -1,3 +1,24 @@
+import firebaseConfig from "./firebase-config.js"; 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+import { getDatabase, ref, increment, runTransaction } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+function incrementarContador() {
+    const contadorRef = ref(database, "contador");
+
+    runTransaction(contadorRef, (contador) => {
+        return (contador || 0) + 1;
+    }).then((resultado) => {
+        console.log("Acessos:", resultado.snapshot.val());
+        document.getElementById("contador").innerText = `Acessos: ${resultado.snapshot.val()}`;
+    });
+}
+
+// Chamar a função ao carregar a página
+document.addEventListener("DOMContentLoaded", incrementarContador);
+
 document.addEventListener('DOMContentLoaded', () => { // Garante que o DOM está carregado
     const startButton = document.querySelector('.neon-btn'); // Seleciona o botão Start
 
